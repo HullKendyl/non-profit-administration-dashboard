@@ -1,17 +1,22 @@
 package org.NPAD;
 
-import jakarta.persistence.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
-@Entity
-@Table(name="Donation")
+@Getter
+@Setter
+@Builder
 public class Donation {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Double amount;
 
-    private BigDecimal amount;
+    private String donationMessage;
 
+    private DonationType donationType;
+
+    private Donor donor;
 }
